@@ -45,12 +45,15 @@ while game_is_on:
 
     for car in cars:
         car.move()
+        if car.check_game_over(player):
+            game_is_on = False
 
     for i in range(len(cars)):
         if cars[i].xcor() < -300:
             cars[i].clear()
             cars = cars[i:]
             break
+
 
 
 

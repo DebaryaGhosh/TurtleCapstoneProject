@@ -4,6 +4,7 @@ from player import Player
 import random
 
 SPEED = 10
+CRASH_DISTANCE = 20
 
 class Car(Turtle):
     def __init__(self):
@@ -27,5 +28,12 @@ class Car(Turtle):
         x_pos = random.randint(-300, 300)
         y_pos = random.randint(-200, 240)
         self.goto(x_pos, y_pos)
+
+    def check_game_over(self, player):
+        if self.distance(player) < CRASH_DISTANCE:
+            return True
+        else:
+            return False
+
 
 
