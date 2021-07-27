@@ -4,7 +4,7 @@ from player import Player
 import random
 
 SPEED = 10
-CRASH_DISTANCE = 20
+CRASH_DISTANCE = 10
 
 class Car(Turtle):
     def __init__(self):
