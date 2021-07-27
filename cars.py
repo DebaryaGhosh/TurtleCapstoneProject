@@ -1,8 +1,9 @@
 from turtle import Turtle
 from colors import color_list
+from player import Player
 import random
 
-SPEED = 5
+SPEED = 10
 
 class Car(Turtle):
     def __init__(self):
@@ -12,10 +13,9 @@ class Car(Turtle):
         self.penup()
         self.color(random.choice(color_list))
         self.setheading(180)
-        self.set_starting_point()
 
     def set_starting_point(self):
-        start_x = 300
+        start_x = random.randint(300, 1000)
         start_y = random.randint(-280, 280)
         self.goto(start_x, start_y)
 
@@ -23,5 +23,9 @@ class Car(Turtle):
         new_x = self.xcor() - SPEED
         self.goto(new_x, self.ycor())
 
+    def random_location(self):
+        x_pos = random.randint(-300, 300)
+        y_pos = random.randint(-200, 240)
+        self.goto(x_pos, y_pos)
 
 
